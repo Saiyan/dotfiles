@@ -1,0 +1,33 @@
+﻿[merge]
+	tool = kdiff3
+[diff]
+	guitool = kdiff3
+	tool = kdiff3
+[core]
+	editor = vim
+	autocrlf = True
+	excludesfile = 
+
+[user]
+	name = saiyan
+	email = saiyan@chrstn.eu
+[alias]
+	tarchanged = tar czf changed-files.tar.gz `git diff --diff-filter=ACMRTUXB --name-only $1 $2`
+	lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	s = status -s
+	pao = push --all origin
+	unstage = reset HEAD --
+	dag = git-dag
+	cola = git-cola
+	dirdiff = difftool -g --dir-diff
+	extensions = !GitExtensions browse .
+[push]
+	default = matching
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[difftool]
+	prompt = false
+[gui]
+	editor = vi
